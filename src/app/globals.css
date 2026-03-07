@@ -1,26 +1,93 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* ── Light Professional Color System ── */
+  --color-bg-white: #ffffff;
+  --color-bg-light: #f8fafc;
+  --color-bg-muted: #f1f5f9;
+  --color-bg-dark: #0f172a;
+  --color-bg-dark-secondary: #1e293b;
+
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-tertiary: #94a3b8;
+  --color-text-white: #ffffff;
+  --color-text-white-muted: #cbd5e1;
+
+  --color-accent: #4f46e5;
+  --color-accent-hover: #4338ca;
+  --color-accent-light: #eef2ff;
+  --color-accent-muted: #c7d2fe;
+  --color-accent-dark: #3730a3;
+
+  --color-emerald: #059669;
+  --color-emerald-light: #ecfdf5;
+
+  --color-border: #e2e8f0;
+  --color-border-light: #f1f5f9;
+
+  /* ── Typography Scale ── */
+  --font-size-display: clamp(3rem, 6vw, 4.5rem);
+  --font-size-h1: clamp(2.25rem, 4.5vw, 3.5rem);
+  --font-size-h2: clamp(1.75rem, 3.5vw, 2.75rem);
+  --font-size-h3: clamp(1.25rem, 2.5vw, 1.75rem);
+  --font-size-h4: clamp(1.125rem, 2vw, 1.375rem);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ── Base ── */
+::selection {
+  background-color: #c7d2fe;
+  color: #1e1b4b;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+*:focus-visible {
+  outline: 2px solid #4f46e5;
+  outline-offset: 2px;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+/* ── Gradient Text ── */
+.gradient-text {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed, #2563eb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Section Spacing ── */
+.section-padding {
+  padding: 120px 0;
+}
+@media (max-width: 768px) {
+  .section-padding { padding: 72px 0; }
+}
+
+/* ── Section Divider ── */
+.section-divider {
+  height: 1px;
+  background: var(--color-border);
+}
+
+/* ── Keyframes ── */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-marquee {
+  animation: marquee 40s linear infinite;
 }
