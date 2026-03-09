@@ -7,7 +7,7 @@ import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[60vh] flex items-center bg-black overflow-hidden">
+    <section className="relative min-h-[80vh] flex items-center bg-black overflow-hidden">
       {/* Background Video */}
       <video
         autoPlay
@@ -77,7 +77,7 @@ export function Hero() {
         </div>
 
         {/* Metrics Bar */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
@@ -95,7 +95,7 @@ export function Hero() {
               </div>
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );
