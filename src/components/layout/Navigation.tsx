@@ -157,11 +157,13 @@ export function Navigation() {
                 >
                   <Link
                     href={item.href}
-                    className={`flex items-center gap-1 px-3.5 py-2 text-[13px] font-medium rounded-lg transition-colors ${
-                      megaMenu === item.label
-                        ? "text-accent"
-                        : "text-text-secondary hover:text-text-primary"
-                    }`}
+                      className={`flex items-center gap-1 px-3.5 py-2 text-[13px] font-medium rounded-lg transition-colors ${
+                        megaMenu === item.label
+                          ? "text-accent"
+                          : scrolled
+                          ? "text-black hover:text-accent"
+                          : "text-white hover:text-white/80"
+                      }`}
                   >
                     {item.label}
                     {hasMega && (
