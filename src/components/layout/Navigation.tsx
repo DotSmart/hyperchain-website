@@ -162,7 +162,7 @@ export function Navigation() {
                           ? "text-accent"
                           : scrolled
                           ? "text-black hover:text-accent"
-                          : "text-white hover:text-white/80"
+                          : "text-blue hover:text-blue/80"
                       }`}
                   >
                     {item.label}
