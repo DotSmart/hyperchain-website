@@ -50,20 +50,21 @@ export default function SolutionsPage() {
                         ↗ {sol.impact}
                       </p>
                     </div>
-                    <div className="flex items-center gap-2 text-sm text-accent font-semibold cursor-pointer hover:gap-3 transition-all">
+                    {/* <div className="flex items-center gap-2 text-sm text-accent font-semibold cursor-pointer hover:gap-3 transition-all">
                       Learn more <ArrowRight className="w-4 h-4" />
-                    </div>
+                    </div> */}
                   </div>
-                  <div
-                    className={`${
-                      isEven ? "" : "lg:order-1"
-                    } aspect-video rounded-xl bg-bg-light border border-border flex items-center justify-center`}
-                  >
-                    <div className="text-center">
-                      <p className="text-5xl font-bold text-accent/20">{String(i + 1).padStart(2, "0")}</p>
-                      <p className="text-xs text-text-tertiary mt-2 uppercase tracking-widest font-medium">{sol.category}</p>
+                    <div
+                      className={`${
+                        isEven ? "" : "lg:order-1"
+                      } aspect-video rounded-xl overflow-hidden border border-border`}
+                    >
+                      <img
+                        src={sol.image}
+                        alt={sol.title}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
-                  </div>
                 </div>
               </FadeIn>
             );

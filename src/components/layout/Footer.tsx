@@ -12,11 +12,13 @@ export function Footer() {
         <div className="py-16 grid grid-cols-2 md:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
-            <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center">
-                <span className="text-white font-bold text-sm">H</span>
+            <div className="flex items-center gap-0.5">
+              <div className="w-[90px] h-[40px] rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-sm">
+                  <img src="logo.png" alt="" />
+                </span>
               </div>
-              <span className="font-bold text-[15px] tracking-tight">
+              <span className="font-bold text-[16px] tracking-tight">
                 {SITE.name}
               </span>
             </div>
