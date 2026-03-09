@@ -7,7 +7,7 @@ import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[100vh] flex items-center bg-black overflow-hidden">
+    <section className="relative min-h-[60vh] flex items-center bg-black overflow-hidden">
       {/* Background Video */}
       <video
         autoPlay

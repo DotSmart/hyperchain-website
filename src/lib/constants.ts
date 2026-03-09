@@ -1,5 +1,7 @@
 // Site-wide constants and content data for Hyperchain Solution
 
+import { image } from "framer-motion/client";
+
 export const SITE = {
   name: "Hyperchain Solution",
   tagline: "The Supply Chain Data Company",
@@ -89,45 +91,57 @@ export const SERVICES = [
 export const SOLUTIONS = [
   {
     title: "AI-Powered Demand Intelligence",
-    description: "Predict demand with unprecedented accuracy using multi-signal AI models that learn from your entire supply chain ecosystem.",
+    description:
+      "Predict demand with unprecedented accuracy using multi-signal AI models that learn from your entire supply chain ecosystem.",
     impact: "30-45% improvement in forecast accuracy",
     icon: "brain",
     category: "AI Platforms",
+    image: "/solutions/ai-powered.png",
   },
   {
     title: "End-to-End Supply Chain Visibility",
-    description: "Real-time visibility across every node in your supply chain — from raw materials to last-mile delivery.",
+    description:
+      "Real-time visibility across every node in your supply chain — from raw materials to last-mile delivery.",
     impact: "60% reduction in blind spots",
     icon: "eye",
     category: "Data Platforms",
+     image: "/solutions/End-to-End-SupplyChain.jpg",
   },
   {
     title: "Enterprise Data Fabric",
-    description: "Unified data architecture that connects siloed supply chain systems into a single source of truth.",
+    description:
+      "Unified data architecture that connects siloed supply chain systems into a single source of truth.",
     impact: "80% faster data-to-insight cycles",
     icon: "git-branch",
     category: "Data Strategy",
+     image: "/solutions/Data-Fabric.png",
   },
   {
     title: "Intelligent Automation Suite",
-    description: "Automate repetitive supply chain workflows with AI agents that learn, adapt, and optimize autonomously.",
+    description:
+      "Automate repetitive supply chain workflows with AI agents that learn, adapt, and optimize autonomously.",
     impact: "50% reduction in manual operations",
     icon: "zap",
     category: "Automation",
+     image: "/solutions/Intelligent_Automation_Suite.png",
   },
   {
     title: "Cloud-Native Supply Chain",
-    description: "Migrate legacy supply chain systems to scalable, resilient cloud-native architectures.",
+    description:
+      "Migrate legacy supply chain systems to scalable, resilient cloud-native architectures.",
     impact: "40% reduction in infrastructure costs",
     icon: "cloud",
     category: "Cloud Migration",
+    image: "/solutions/Cloud_Native_Supply_Chain.png",
   },
   {
     title: "Digital Twin Operations",
-    description: "Create virtual replicas of your supply chain to simulate scenarios, test strategies, and optimize performance.",
+    description:
+      "Create virtual replicas of your supply chain to simulate scenarios, test strategies, and optimize performance.",
     impact: "25% improvement in operational efficiency",
     icon: "copy",
     category: "Innovation",
+     image: "/solutions/Digital_Twin_Operations.png",
   },
 ];
 
@@ -302,5 +316,38 @@ export const TESTIMONIALS = [
     author: "SVP Operations",
     company: "Top 10 Pharma Company",
     role: "45 countries",
+  },
+];
+
+export const WHY_HYPERCHAIN = [
+  {
+    id: 1,
+    title: "Contextual Expertise",
+    description:
+      "Leverage deep process, operational and industry expertise with a data ecosystem view and toolsets to identify the best path to value.",
+  },
+  {
+    id: 2,
+    title: "Human-Centric Experience",
+    description:
+      "Collect and apply insights from people across the ecosystem to design and deliver the best customer, employee and partner experiences.",
+  },
+  {
+    id: 3,
+    title: "Integrated Technology & Digital Innovation",
+    description:
+      "We help organizations realize actual ROI by increasing user adoption and scaling digital platforms effectively.",
+  },
+  {
+    id: 4,
+    title: "Predictive Analytics",
+    description:
+      "Leverage data to sense trends, improve observability, and proactively generate insights that drive measurable outcomes.",
+  },
+  {
+    id: 5,
+    title: "AI & Intelligent Automation",
+    description:
+      "Build quick-win RPA and workflow automation systems to identify and solve capacity bottlenecks in your supply chain.",
   },
 ];

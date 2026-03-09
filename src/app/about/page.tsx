@@ -4,6 +4,7 @@ import { FadeIn } from "@/components/ui/FadeIn";
 import { CTA } from "@/components/home/CTA";
 import { PARTNERS, METRICS } from "@/lib/constants";
 import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
+import { WHY_HYPERCHAIN } from "@/lib/constants";
 import {
   Target,
   Shield,
@@ -152,6 +153,50 @@ export default function AboutPage() {
               </FadeIn>
             ))}
           </div>
+        </div>
+      </section>
+      
+      {/* WHY HYPERCHAIN */}
+      <section className="pb-24">
+        <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
+
+          <FadeIn>
+            <div className="text-center mb-14">
+              <span className="inline-flex items-center px-3.5 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-[0.15em] bg-accent-light text-accent mb-5">
+                Why Hyperchain
+              </span>
+
+              <h2 className="text-h2 font-bold tracking-tight text-text-primary">
+                What Makes Us Different
+              </h2>
+            </div>
+          </FadeIn>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {WHY_HYPERCHAIN.map((item, i) => (
+              <FadeIn key={item.id} delay={i * 0.08}>
+                <div className="p-7 rounded-2xl border border-border hover:shadow-[0_8px_40px_-12px_rgba(0,0,0,0.08)] hover:border-transparent transition-all duration-300 h-full">
+
+                  {/* Number */}
+                  <span className="text-accent font-bold text-sm mb-2 block">
+                    {String(item.id).padStart(2, "0")}
+                  </span>
+
+                  {/* Title */}
+                  <h3 className="text-base font-bold text-text-primary mb-2">
+                    {item.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-sm text-text-secondary leading-relaxed">
+                    {item.description}
+                  </p>
+
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+
         </div>
       </section>
 

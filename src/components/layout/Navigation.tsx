@@ -123,17 +123,21 @@ export function Navigation() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? "bg-white/90 backdrop-blur-xl shadow-[0_1px_3px_rgba(0,0,0,0.08)] border-b border-border"
-            : "bg-white"
-        }`}
+        className={`fixed top-0 pt-5 left-0 right-0 z-50 transition-all duration-300 b-none
+          ${
+              scrolled
+                ? " backdrop-blur-xl"
+                : "bg-transparent"
+            }
+            `}
       >
-        <nav className="max-w-[1280px] mx-auto px-6 lg:px-8 h-[72px] flex items-center justify-between">
+        <nav className="max-w-[1280px] mx-auto px-6 lg:px-8 h-[72px] flex items-center justify-between bg-white/40 backdrop-blur-xl rounded-[70px] border border-white/30 shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 shrink-0">
-            <div className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center">
-              <span className="text-white font-bold text-sm">H</span>
+          <Link href="/" className="flex items-center gap-1">
+            <div className="w-[90px] h-[40px] rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-sm">
+                <img src="logo.png" alt="" />
+              </span>
             </div>
             <span className="font-bold text-[15px] tracking-tight text-text-primary hidden sm:block">
               {SITE.name}
