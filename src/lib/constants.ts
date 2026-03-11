@@ -3,7 +3,7 @@
 import { image } from "framer-motion/client";
 
 export const SITE = {
-  name: "Hyperchain Solution",
+  name: "Hyperchain Solutions",
   tagline: "The Supply Chain Data Company",
   description: "Engineering Data, Technology & Supply Chain Intelligence for Global Enterprises",
   email: "outreach@hyperchainsolution.com",
