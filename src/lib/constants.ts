@@ -154,7 +154,7 @@ export const INDUSTRIES = [
   },
   {
     title: "Retail & Consumer",
-    description: "Transform omnichannel fulfillment, inventory allocation, and customer experience with AI-driven intelligence.",
+    description: "Optimize fulfillment, inventory, and customer experience with AI-driven intelligence.",
     icon: "shopping-bag",
     stats: "150+ retail transformations",
   },
@@ -172,7 +172,7 @@ export const INDUSTRIES = [
   },
   {
     title: "Healthcare & Pharma",
-    description: "Ensure compliance, traceability, and efficiency across pharmaceutical and medical device supply chains.",
+    description: "Ensure compliance, traceability, and efficiency across pharma and medical supply chains.",
     icon: "heart-pulse",
     stats: "30+ pharma supply chains",
   },
@@ -288,14 +288,14 @@ export const PARTNERS = [
 ];
 
 export const OFFICES = [
-  { city: "Raleigh", country: "USA", type: "HQ", lat: 35.78, lng: -78.64 },
-  { city: "New York", country: "USA", type: "Office", lat: 40.71, lng: -74.01 },
+  // { city: "Raleigh", country: "USA", type: "HQ", lat: 35.78, lng: -78.64 },
+  // { city: "New York", country: "USA", type: "Office", lat: 40.71, lng: -74.01 },
   { city: "London", country: "UK", type: "Office", lat: 51.51, lng: -0.13 },
-  { city: "Singapore", country: "Singapore", type: "Delivery Center", lat: 1.35, lng: 103.82 },
-  { city: "Bangalore", country: "India", type: "Delivery Center", lat: 12.97, lng: 77.59 },
-  { city: "Sydney", country: "Australia", type: "Office", lat: -33.87, lng: 151.21 },
+  // { city: "Singapore", country: "Singapore", type: "Delivery Center", lat: 1.35, lng: 103.82 },
+  { city: "Kolkata", country: "India", type: "Office", lat: 12.97, lng: 77.59 },
+  // { city: "Sydney", country: "Australia", type: "Office", lat: -33.87, lng: 151.21 },
   { city: "Dubai", country: "UAE", type: "Office", lat: 25.20, lng: 55.27 },
-  { city: "São Paulo", country: "Brazil", type: "Office", lat: -23.55, lng: -46.63 },
+  // { city: "São Paulo", country: "Brazil", type: "Office", lat: -23.55, lng: -46.63 },
 ];
 
 export const TESTIMONIALS = [

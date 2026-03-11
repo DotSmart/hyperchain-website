@@ -1,11 +1,13 @@
 "use client";
-
+ 
 import { useState } from "react";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { SITE } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
 import { Mail, MapPin, Phone, Clock, CheckCircle2 } from "lucide-react";
-
+import ReCAPTCHA from "react-google-recaptcha";
+import { useRef } from "react";
+ 
 const interests = [
   "Supply Chain Advisory",
   "Data Engineering & Integration",
@@ -15,10 +17,47 @@ const interests = [
   "Partnership Inquiry",
   "General Inquiry",
 ];
-
+ 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
 
+  const token = recaptchaRef.current?.getValue();
+
+  if (!token) {
+    alert("Please verify captcha");
+    return;
+  }
+
+  const formData = new FormData(e.currentTarget);
+
+  const data = {
+    firstName: formData.get("firstName"),
+    lastName: formData.get("lastName"),
+    email: formData.get("email"),
+    company: formData.get("company"),
+    jobTitle: formData.get("jobTitle"),
+    message: formData.get("message"),
+    captcha: token,
+  };
+
+  const res = await fetch("/api/contact", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+
+  if (res.ok) {
+    setSubmitted(true);
+    recaptchaRef.current?.reset();
+  } else {
+    alert("Something went wrong");
+  }
+};
   return (
     <>
       {/* Hero */}
@@ -40,7 +79,7 @@ export default function ContactPage() {
           </FadeIn>
         </div>
       </section>
-
+ 
       {/* Contact Grid */}
       <section className="pb-24">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
@@ -83,7 +122,7 @@ export default function ContactPage() {
                     </div>
                   </div>
                 </div>
-
+ 
                 <div className="p-6 rounded-2xl bg-bg-light border border-border">
                   <h4 className="font-bold text-text-primary mb-2">Schedule a Discovery Call</h4>
                   <p className="text-sm text-text-secondary mb-4">
@@ -94,7 +133,7 @@ export default function ContactPage() {
                     Book a Call
                   </Button>
                 </div>
-
+ 
                 <div className="p-6 rounded-2xl bg-accent-light border border-accent/10">
                   <h4 className="font-bold text-text-primary mb-2">For Partnerships</h4>
                   <p className="text-sm text-text-secondary">
@@ -107,7 +146,7 @@ export default function ContactPage() {
                 </div>
               </div>
             </FadeIn>
-
+ 
             {/* Right - Form */}
             <FadeIn delay={0.2}>
               {submitted ? (
@@ -125,39 +164,39 @@ export default function ContactPage() {
               ) : (
                 <form
                   className="p-8 md:p-10 rounded-2xl bg-bg-light border border-border"
-                  onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}
+                  onSubmit={handleSubmit}
                 >
                   <h3 className="text-lg font-bold text-text-primary mb-6">
                     Tell us about your project
                   </h3>
-
+ 
                   <div className="grid sm:grid-cols-2 gap-4 mb-4">
                     <div>
                       <label className="block text-xs font-semibold text-text-tertiary mb-1.5">First Name *</label>
-                      <input type="text" required className="w-full px-4 py-3 bg-white border border-border rounded-lg text-sm text-text-primary placeholder:text-text-tertiary focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all" placeholder="John" />
+                      <input type="text" name="firstName" required className="w-full px-4 py-3 bg-white border border-border rounded-lg text-sm text-text-primary placeholder:text-text-tertiary focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all" placeholder="John" />
                     </div>
                     <div>
                       <label className="block text-xs font-semibold text-text-tertiary mb-1.5">Last Name *</label>
-                      <input type="text" required className="w-full px-4 py-3 bg-white border border-border rounded-lg text-sm text-text-primary placeholder:text-text-tertiary focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all" placeholder="Doe" />
+                      <input type="text" name="lastName" required className="w-full px-4 py-3 bg-white border border-border rounded-lg text-sm text-text-primary placeholder:text-text-tertiary focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all" placeholder="Doe" />
                     </div>
                   </div>
-
+ 
                   <div className="grid sm:grid-cols-2 gap-4 mb-4">
                     <div>
                       <label className="block text-xs font-semibold text-text-tertiary mb-1.5">Work Email *</label>
-                      <input type="email" required className="w-full px-4 py-3 bg-white border border-border rounded-lg text-sm text-text-primary placeholder:text-text-tertiary focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all" placeholder="john@company.com" />
+                      <input type="email" name="email" required className="w-full px-4 py-3 bg-white border border-border rounded-lg text-sm text-text-primary placeholder:text-text-tertiary focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all" placeholder="john@company.com" />
                     </div>
                     <div>
                       <label className="block text-xs font-semibold text-text-tertiary mb-1.5">Company *</label>
-                      <input type="text" required className="w-full px-4 py-3 bg-white border border-border rounded-lg text-sm text-text-primary placeholder:text-text-tertiary focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all" placeholder="Acme Corp" />
+                      <input type="text" name="company" required className="w-full px-4 py-3 bg-white border border-border rounded-lg text-sm text-text-primary placeholder:text-text-tertiary focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all" placeholder="Acme Corp" />
                     </div>
                   </div>
-
+ 
                   <div className="mb-4">
                     <label className="block text-xs font-semibold text-text-tertiary mb-1.5">Job Title</label>
-                    <input type="text" className="w-full px-4 py-3 bg-white border border-border rounded-lg text-sm text-text-primary placeholder:text-text-tertiary focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all" placeholder="VP Supply Chain" />
+                    <input type="text" name="jobTitle" className="w-full px-4 py-3 bg-white border border-border rounded-lg text-sm text-text-primary placeholder:text-text-tertiary focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all" placeholder="VP Supply Chain" />
                   </div>
-
+ 
                   <div className="mb-4">
                     <label className="block text-xs font-semibold text-text-tertiary mb-3">Area of Interest</label>
                     <div className="flex flex-wrap gap-2">
@@ -169,12 +208,12 @@ export default function ContactPage() {
                       ))}
                     </div>
                   </div>
-
+ 
                   <div className="mb-6">
                     <label className="block text-xs font-semibold text-text-tertiary mb-1.5">Tell us more</label>
-                    <textarea rows={4} className="w-full px-4 py-3 bg-white border border-border rounded-lg text-sm text-text-primary placeholder:text-text-tertiary focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all resize-none" placeholder="Describe your supply chain challenges..." />
+                    <textarea rows={4} name="message" className="w-full px-4 py-3 bg-white border border-border rounded-lg text-sm text-text-primary placeholder:text-text-tertiary focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all resize-none" placeholder="Describe your supply chain challenges..." />
                   </div>
-
+ 
                   <Button variant="primary" size="lg" className="w-full">
                     Send Message
                   </Button>
@@ -187,3 +226,4 @@ export default function ContactPage() {
     </>
   );
 }
+ 
