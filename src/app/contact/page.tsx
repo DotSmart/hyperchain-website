@@ -67,13 +67,13 @@ export default function ContactPage() {
                         <p className="text-sm text-text-secondary">{SITE.location}</p>
                       </div>
                     </div>
-                    <div className="flex items-start gap-3">
+                    {/* <div className="flex items-start gap-3">
                       <Phone className="w-5 h-5 text-accent mt-0.5" />
                       <div>
                         <p className="text-sm font-semibold text-text-primary">Phone</p>
                         <p className="text-sm text-text-secondary">{SITE.phone}</p>
                       </div>
-                    </div>
+                    </div> */}
                     <div className="flex items-start gap-3">
                       <Clock className="w-5 h-5 text-accent mt-0.5" />
                       <div>
