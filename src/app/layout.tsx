@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import "./globals.css";
 import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/layout/Footer";
+import {Toaster} from "sonner";
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -38,7 +39,10 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${jakarta.variable} ${inter.variable} antialiased bg-bg-white text-text-primary`}
+ 
       >
+                {/* {children} */}
+  <Toaster position="top-right" richColors />
         <Navigation />
         <main>{children}</main>
         <Footer />

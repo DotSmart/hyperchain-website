@@ -1,8 +1,9 @@
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { ButtonHTMLAttributes } from "react";
 
-interface ButtonProps {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   href?: string;
   variant?: "primary" | "secondary" | "ghost" | "outline" | "white" | "outline-light";

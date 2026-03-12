@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/Button";
 import { Mail, MapPin, Phone, Clock, CheckCircle2 } from "lucide-react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useRef } from "react";
+import { toast } from "sonner";
  
 const interests = [
   "Supply Chain Advisory",
@@ -20,16 +21,20 @@ const interests = [
  
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
   const recaptchaRef = useRef<ReCAPTCHA>(null);
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  setLoading(true);
+  setError("");
   e.preventDefault();
 
   const token = recaptchaRef.current?.getValue();
 
-  if (!token) {
-    alert("Please verify captcha");
-    return;
-  }
+  // if (!token) {
+  //   alert("Please verify captcha");
+  //   return;
+  // }
 
   const formData = new FormData(e.currentTarget);
 
@@ -51,12 +56,18 @@ export default function ContactPage() {
     body: JSON.stringify(data),
   });
 
-  if (res.ok) {
-    setSubmitted(true);
-    recaptchaRef.current?.reset();
-  } else {
-    alert("Something went wrong");
-  }
+
+    if (res.ok) {
+      setSubmitted(true);
+      recaptchaRef.current?.reset();
+    } else {
+      setError("Something went wrong. Please try again.");
+    }
+  // } catch {
+  //   setError("Unable to send message. Please try again later.");
+  // }
+
+  setLoading(false);
 };
   return (
     <>
@@ -213,10 +224,30 @@ export default function ContactPage() {
                     <label className="block text-xs font-semibold text-text-tertiary mb-1.5">Tell us more</label>
                     <textarea rows={4} name="message" className="w-full px-4 py-3 bg-white border border-border rounded-lg text-sm text-text-primary placeholder:text-text-tertiary focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all resize-none" placeholder="Describe your supply chain challenges..." />
                   </div>
- 
-                  <Button variant="primary" size="lg" className="w-full">
-                    Send Message
-                  </Button>
+                      <div className="mb-6">
+                <ReCAPTCHA
+                  sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+                  ref={recaptchaRef}
+                />
+              </div>
+                                  {error && (
+                      <p className="text-red-500 text-sm mb-4">
+                        {error}
+                      </p>
+                    )}
+                 <Button
+  type="submit"
+  variant="primary"
+  size="lg"
+  className="w-full flex items-center justify-center gap-2"
+  disabled={loading}
+>
+  {loading && (
+    <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+  )}
+
+  {loading ? "Sending..." : "Send Message"}
+</Button>
                 </form>
               )}
             </FadeIn>
