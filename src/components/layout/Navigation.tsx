@@ -131,15 +131,13 @@ export function Navigation() {
             }
             `}
       >
-        <nav className="max-w-[1280px] mx-auto px-6 lg:px-8 h-[72px] flex items-center justify-between bg-white/40 backdrop-blur-xl rounded-[70px] border border-white/30 shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
+        <nav className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 h-[64px] sm:h-[72px] flex items-center justify-between bg-white/40 backdrop-blur-xl rounded-[40px] sm:rounded-[70px] border border-white/30 shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
+
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-1">
-            <div className="w-[90px] h-[40px] rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">
-                <img src="logo.png" alt="" />
-              </span>
-            </div>
-            <span className="font-bold text-[15px] tracking-tight text-text-primary hidden sm:block">
+          <Link href="/" className="flex items-center gap-2">
+            <img src="/logo.png" className="w-[70px] sm:w-[90px]" alt="logo" />
+
+            <span className="font-semibold text-xs sm:text-sm tracking-tight text-text-primary truncate">
               {SITE.name}
             </span>
           </Link>
