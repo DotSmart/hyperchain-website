@@ -17,7 +17,7 @@ export function Hero() {
         preload="auto"
         className="absolute inset-0 w-full h-full object-cover opacity-60"
       >
-        <source src="/hero.mp4" type="video/mp4" />
+        <source src="/intro.mp4" type="video/mp4" />
       </video>
       {/* Dark overlay for text readability */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/20 pointer-events-none" />
@@ -45,7 +45,7 @@ export function Hero() {
           >
             Engineering data{" "}
             <span className="gradient-text">intelligence</span>{" "}
-            for the world&apos;s supply chains.
+            that runs enterprise supply chains.
           </motion.h1>
 
           {/* Subtitle */}
@@ -55,9 +55,10 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.35 }}
             className="mt-6 text-lg lg:text-xl text-white/80 leading-relaxed max-w-2xl"
           >
-            {SITE.description}. We partner with global enterprises to transform
-            supply chain operations through data engineering, AI, and deep
-            domain expertise.
+            {/* {SITE.description}. */}
+            Hyperchain enables companies to modernize technology, 
+            build critical data infrastructure for AI, rewire processes at scale 
+            so they stay ahead in adapting intelligent computing of the future.
           </motion.p>
 
           {/* CTAs */}

@@ -8,51 +8,48 @@ import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 export function TrustLayer() {
   return (
     <section className="bg-bg-light border-y border-border">
-      <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
+      <div className="max-w-[1280px] mx-auto px-6 py-8 lg:px-8">
 
-          {/* Metrics */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
-            className="py-24"
-          >
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+{/* Metrics */}
+<motion.div
+  initial={{ opacity: 0, y: 40 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, delay: 0.7 }}
+  className="py-8 md:py-10"
+>
+  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
 
-              {METRICS.map((m, i) => {
+    {METRICS.map((m, i) => {
 
-                const colors = [
-                  "from-[#6366f1] to-[#8b5cf6]",
-                  "from-[#22d3ee] to-[#3b82f6]",
-                  "from-[#34d399] to-[#10b981]",
-                  "from-[#fbbf24] to-[#f59e0b]"
-                ];
+      const colors = [
+        "from-[#6366f1] to-[#8b5cf6]",
+        "from-[#22d3ee] to-[#3b82f6]",
+        "from-[#34d399] to-[#10b981]",
+        "from-[#fbbf24] to-[#f59e0b]"
+      ];
 
-                return (
-                  <div
-                    key={i}
-                    className="relative group rounded-2xl border border-gray-100 bg-white p-8 text-center shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5"
-                  >
+      return (
+        <div
+          key={i}
+          className="relative group rounded-2xl border border-gray-100 bg-white p-5 md:p-8 text-center shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5"
+        >
 
-                    {/* Gradient Glow
-                    <div className={`absolute inset-0 opacity-0 group-hover:opacity-20 bg-gradient-to-r ${colors[i]} rounded-2xl blur-xl transition`} /> */}
+          {/* Value */}
+          <div className={`text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r ${colors[i]} bg-clip-text text-transparent`}>
+            <AnimatedCounter value={m.value} suffix={m.suffix} />
+          </div>
 
-                    {/* Value */}
-                    <div className={`text-4xl font-bold bg-gradient-to-r ${colors[i]} bg-clip-text text-transparent`}>
-                      <AnimatedCounter value={m.value} suffix={m.suffix} />
-                    </div>
+          {/* Label */}
+          <p className="mt-2 md:mt-3 text-[11px] sm:text-xs md:text-sm font-medium text-gray-500 uppercase tracking-wider">
+            {m.label}
+          </p>
 
-                    {/* Label */}
-                    <p className="relative mt-3 text-sm font-medium text-gray-500 uppercase tracking-wider">
-                      {m.label}
-                    </p>
+        </div>
+      );
+    })}
 
-                  </div>
-                );
-              })}
-
-            </div>
-          </motion.div>
+  </div>
+</motion.div>
 
         {/* Partners */}
         <div className="text-center">

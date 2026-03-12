@@ -1,7 +1,7 @@
 interface SectionHeadingProps {
   badge?: string;
   title: string;
-  subtitle?: string;
+  subtitle?: React.ReactNode;
   align?: "left" | "center";
   dark?: boolean;
 }
@@ -26,6 +26,7 @@ export function SectionHeading({
           {badge}
         </span>
       )}
+
       <h2
         className={`text-h2 font-bold tracking-tight leading-[1.15] ${
           dark ? "text-white" : "text-text-primary"
@@ -33,6 +34,7 @@ export function SectionHeading({
       >
         {title}
       </h2>
+
       {subtitle && (
         <p
           className={`mt-4 text-base lg:text-lg leading-relaxed ${
