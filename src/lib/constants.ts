@@ -275,9 +275,9 @@ export const INSIGHTS = [
 ];
 
 export const METRICS = [
-  { value: 500, suffix: "+", label: "Enterprise Clients" },
-  { value: 25, suffix: "+", label: "Countries Served" },
-  { value: 1000, suffix: "+", label: "Engineers & Consultants" },
+  { value: 8, suffix: "+", label: "Enterprise Clients" },
+  { value: 3, suffix: "+", label: "Countries Served" },
+  { value: 100, suffix: "+", label: "Engineers & Consultants" },
   { value: 98, suffix: "%", label: "Client Retention Rate" },
 ];
 
