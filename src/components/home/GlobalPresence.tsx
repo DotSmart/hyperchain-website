@@ -18,7 +18,7 @@ export function GlobalPresence() {
           subtitle="With offices and delivery centers across 8 cities, we combine global scale with local expertise to serve clients wherever they operate."
         />
 
-        <div className="mt-16 grid lg:grid-cols-[1fr] gap-10">
+        <div className="mt-16 grid lg:grid-cols-2 gap-10">
           {/* HQ */}
           {hq && (
             <FadeIn>
@@ -40,7 +40,7 @@ export function GlobalPresence() {
 
           {/* Other Offices */}
           <FadeIn delay={0.1}>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-4">
               {rest.map((o, i) => (
                 <div
                   key={i}

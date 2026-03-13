@@ -290,7 +290,7 @@ export const PARTNERS = [
 export const OFFICES = [
   // { city: "Raleigh", country: "USA", type: "HQ", lat: 35.78, lng: -78.64 },
   // { city: "New York", country: "USA", type: "Office", lat: 40.71, lng: -74.01 },
-  { city: "London", country: "UK", type: "Office", lat: 51.51, lng: -0.13 },
+  { city: "Raleigh", country: "UK", type: "HQ", lat: 51.51, lng: -0.13 },
   // { city: "Singapore", country: "Singapore", type: "Delivery Center", lat: 1.35, lng: 103.82 },
   { city: "Kolkata", country: "India", type: "Office", lat: 12.97, lng: 77.59 },
   // { city: "Sydney", country: "Australia", type: "Office", lat: -33.87, lng: 151.21 },

@@ -72,7 +72,7 @@ export function TrustLayer() {
         <div className="section-divider my-16" />
 
         {/* Testimonials */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-8 mb-8">
           {TESTIMONIALS.map((t, i) => (
             <FadeIn key={i} delay={i * 0.1}>
               <blockquote className="h-full flex flex-col">
