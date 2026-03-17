@@ -9,16 +9,30 @@ export function Hero() {
   return (
     <section className="relative min-h-[80vh] flex items-center bg-black overflow-hidden">
       {/* Background Video */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="auto"
-        className="absolute inset-0 w-full h-full object-cover opacity-60"
-      >
-        <source src="/intro.mp4" type="video/mp4" />
-      </video>
+   {/* Desktop Video */}
+<video
+  autoPlay
+  muted
+  loop
+  playsInline
+  preload="auto"
+  className="absolute inset-0 w-full h-full object-cover opacity-60 hidden md:block"
+>
+  <source src="/intro.mp4" type="video/mp4" />
+</video>
+
+{/* Mobile Video */}
+<video
+  autoPlay
+  muted
+  loop
+  playsInline
+  preload="auto"
+  style={{ height: "160%" }}
+  className="absolute inset-0 w-full h-full object-cover opacity-70 block md:hidden" 
+>
+  <source src="/intro-mobile.mp4" type="video/mp4" />
+</video>
       {/* Dark overlay for text readability */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/20 pointer-events-none" />
 
