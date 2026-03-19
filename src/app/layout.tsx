@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/layout/Footer";
 import {Toaster} from "sonner";
+import Script from "next/script";
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -46,6 +47,19 @@ export default function RootLayout({
         <Navigation />
         <main>{children}</main>
         <Footer />
+        <Script
+  src="https://www.googletagmanager.com/gtag/js?id=G-QZM7LCKCY1"
+  strategy="afterInteractive"
+/>
+
+<Script id="google-analytics" strategy="afterInteractive">
+  {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QZM7LCKCY1');
+  `}
+</Script>
       </body>
     </html>
   );
