@@ -29,7 +29,7 @@ export function GlobalPresence() {
                 <h3 className="mt-3 text-2xl font-bold text-text-primary">
                   {hq.city}
                 </h3>
-                <p className="text-sm text-text-secondary mt-1">{hq.country}</p>
+                {/* <p className="text-sm text-text-secondary mt-1">{hq.country}</p> */}
                      <p className="text-[10px] text-text-tertiary mt-2 uppercase tracking-wider font-medium">
                     Office
                   </p>
