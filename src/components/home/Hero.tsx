@@ -28,8 +28,8 @@ export function Hero() {
   loop
   playsInline
   preload="auto"
-  style={{ height: "160%" }}
-  className="absolute inset-0 w-full h-full object-cover opacity-70 block md:hidden" 
+  style={{ height: "120%" }}
+  className="absolute inset-0 w-full h-full object-cover opacity-65 block md:hidden" 
 >
   <source src="/intro-mobile.mp4" type="video/mp4" />
 </video>

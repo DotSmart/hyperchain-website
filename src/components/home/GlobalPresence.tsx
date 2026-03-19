@@ -30,10 +30,13 @@ export function GlobalPresence() {
                   {hq.city}
                 </h3>
                 <p className="text-sm text-text-secondary mt-1">{hq.country}</p>
-                <div className="mt-6 flex items-center gap-2 text-sm text-text-tertiary">
+                     <p className="text-[10px] text-text-tertiary mt-2 uppercase tracking-wider font-medium">
+                    Office
+                  </p>
+                {/* <div className="mt-6 flex items-center gap-2 text-sm text-text-tertiary">
                   <MapPin className="w-4 h-4" />
                   London, UK
-                </div>
+                </div> */}
               </div>
             </FadeIn>
           )}

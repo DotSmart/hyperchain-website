@@ -27,7 +27,8 @@
   --color-border-light: #f1f5f9;
 
     /* Fonts */
-  --font-heading: var(--font-heading);
+  /* --font-heading: var(--font-heading); */
+  --font-heading : Verdana, Geneva, Tahoma, sans-serif;
   --font-body: var(--font-body);
 
   /* ── Typography Scale ── */
@@ -100,7 +101,8 @@ html {
   /* --- Font -- */
 
   body {
-    font-family: var(--font-body);
+    /* font-family: var(--font-body); */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
 
   h1,
@@ -109,7 +111,8 @@ html {
   h4,
   h5,
   h6 {
-    font-family: var(--font-heading);
+    /* font-family: var(--font-heading); */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 700;
     letter-spacing: -0.01em;
   }

@@ -46,7 +46,7 @@ export function ServicesGrid() {
                   {s.offerings.slice(0, 4).map((o, j) => (
                     <span
                       key={j}
-                      className="px-3 py-1 text-[11px] font-medium text-text-tertiary bg-bg-light rounded-full"
+                      className="px-3 py-1 text-[10px] font-medium text-text-tertiary bg-bg-light rounded-full"
                     >
                       {o}
                     </span>
